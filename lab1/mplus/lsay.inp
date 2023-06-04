@@ -1,0 +1,20 @@
+TITLE:
+LSAY - Lab 2
+DATA:
+FILE = "lsay.dat";
+ 
+VARIABLE:
+NAMES = rand lsayid region urban gender mothed fathed raceth math_irt enjoy good
+     undrstnd nervous scared useful logical job adult; 
+ MISSING=.;
+ categorical = enjoy useful logical job adult; ! missing semicolon
+  usevar =  enjoy useful logical job adult;
+  classes = c(4);
+ANALYSIS:
+estimator = mlr; 
+    type = mixture;
+OUTPUT:
+residual tech11 tech14;
+PLOT:
+type = plot3; 
+    series = enjoy-adult(*);
