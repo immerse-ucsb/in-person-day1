@@ -136,8 +136,13 @@ dframe <- data.frame(Variables=rownames(tab), Proportion=prop[,2], Count=tab[,2]
 #remove row names
 row.names(dframe) <- NULL
 
-dframe %>% 
+# Make it a gt() table
+prop_table <- dframe %>% 
   gt()
+prop_table
+
+# Save as a Word doc
+gtsave(prop_table, here("lab3", "figures", "prop_table.docx"))
 ```
 
 ------------------------------------------------------------------------
@@ -295,6 +300,7 @@ locations = cells_title()
 ) 
 
 fit_table
+
 ```
 
 ------------------------------------------------------------------------
@@ -303,6 +309,9 @@ Save table:
 
 ```{r}
 gtsave(fit_table, here("lab3","figures","fit_table.png"))
+
+# This may or may not work, its a newer feature:
+gtsave(fit_table, here("lab3", "figures", "fit_table.docx"))
 ```
 
 ------------------------------------------------------------------------
@@ -510,7 +519,7 @@ response_patterns <-  rbind(order_highest[1:5,], table_data)
 Finally, use `{gt}` to make a nicely formatted table
 
 ```{r}
-response_patterns %>% 
+resp_table <- response_patterns %>% 
   gt() %>%
     tab_header(
     title = "Observed Response Patterns",
@@ -558,6 +567,19 @@ response_patterns %>%
   cols_align(align = "center") %>% 
   opt_align_table_header(align = "left") %>% 
   gt::tab_options(table.font.names = "Times New Roman") 
+
+resp_table
+```
+
+------------------------------------------------------------------------
+
+Save table:
+
+```{r}
+gtsave(resp_table, here("lab3","figures","resp_table.png"))
+
+# This may or may not work, its a newer feature:
+gtsave(resp_table, here("lab3", "figures", "resp_table.docx"))
 ```
 
 
@@ -651,13 +673,13 @@ OCCk <- mcaPk %>%
   mutate(OCCk = round((avePPk/(1-avePPk))/(kclass/(1-kclass)),3))
 
 # Put everything together
-class_table <- data.frame(OCCk, entropy)
+class_df <- data.frame(OCCk, entropy)
 ```
 
 Now, use `{gt}` to make a nicely formatted table
 
 ```{r}
-class_table %>% 
+class_table <- class_df %>% 
   gt() %>%
     tab_header(
     title = "Model Classification Diagnostics for the 2-Class Solution") %>%
@@ -679,9 +701,21 @@ class_table %>%
   cols_align(align = "center") %>% 
   opt_align_table_header(align = "left") %>% 
   gt::tab_options(table.font.names = "Times New Roman")
+
+class_table
 ```
 
 
+------------------------------------------------------------------------
+
+Save table:
+
+```{r}
+gtsave(class_table, here("lab3","figures","class_table.png"))
+
+# This may or may not work, its a newer feature:
+gtsave(class_table, here("lab3", "figures", "class_table.docx"))
+```
 
 
 
