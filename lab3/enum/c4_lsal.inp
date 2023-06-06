@@ -1,7 +1,7 @@
 TITLE:
 4-Class
 DATA:
-FILE = "LSAL_data.dat";
+FILE = "C:/Users/dinan/Desktop/in-person-day1/lab3/enum/LSAL_data.dat";
  
 VARIABLE:
 NAMES = rand lsayid region urban gender mothed fathed raceth math_irt enjoy good

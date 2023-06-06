@@ -55,6 +55,7 @@ library(janitor) #clean_names
 library(gt) # create tables
 library(cowplot) # a ggplot theme
 library(DiagrammeR) # create path diagrams
+library(glue)
 ```
 
 ------------------------------------------------------------------------
@@ -111,7 +112,7 @@ grViz(" digraph model {
 The data can be found in the `data` folder and is called `lsay_subset.csv`.
 
 ```{r}
-lsay_data <- read_csv(here("lab1","data","lsay_subset.csv")) %>% 
+lsay_data <- read_csv(here("lab3","data","lsay_subset.csv")) %>% 
   clean_names() # make variable names lowercase
 ```
 
@@ -396,7 +397,7 @@ ggplot(
   geom_line() +
   scale_colour_viridis_d() +
   facet_wrap( ~ model, ncol = 2) +
-  labs(title = "Math Attitude Items",
+  labs(title = "Science Attitude Items",
        x = " ", y = "Probability") +
   theme_minimal() +
   theme(panel.grid.major.y = element_blank(),
@@ -682,7 +683,7 @@ Now, use `{gt}` to make a nicely formatted table
 class_table <- class_df %>% 
   gt() %>%
     tab_header(
-    title = "Model Classification Diagnostics for the 2-Class Solution") %>%
+    title = "Model Classification Diagnostics for the 4-Class Solution") %>%
     cols_label(
       model = md("*k*-Class"),
       kclass = md("*k*-Class Proportions"),

@@ -126,9 +126,9 @@ summary(lsay_data)
 input  <- mplusObject(
   TITLE = "LSAY 4-Class Model - Lab 1", 
   VARIABLE = "categorical = enjoy useful logical job adult;
-  usevar =  enjoy useful logical job adult;
+  usevar =  enjoy useful logical job adult; 
   classes = c(4);",
-  
+
   ANALYSIS = 
    "estimator = mlr; 
     type = mixture;",

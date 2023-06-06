@@ -1,26 +1,26 @@
 Mplus VERSION 8.8
 MUTHEN & MUTHEN
-06/01/2023  11:19 PM
+06/05/2023   3:31 PM
 
 INPUT INSTRUCTIONS
 
   TITLE:
-  LSAY - Lab 2
+  LSAY 4-Class Model - Lab 1
   DATA:
-  FILE = "lsay.dat";
+  FILE = "C:/Users/dinan/Desktop/in-person-day1/lab1/mplus/lsay.dat";
 
   VARIABLE:
   NAMES = rand lsayid region urban gender mothed fathed raceth math_irt enjoy good
        undrstnd nervous scared useful logical job adult;
    MISSING=.;
-   categorical = enjoy useful logical job adult; ! missing semicolon
+   categorical = enjoy useful logical job adult;
     usevar =  enjoy useful logical job adult;
     classes = c(4);
   ANALYSIS:
   estimator = mlr;
       type = mixture;
   OUTPUT:
-  residual tech11 tech14;
+  tech11 tech14;
   PLOT:
   type = plot3;
       series = enjoy-adult(*);
@@ -36,7 +36,7 @@ INPUT INSTRUCTIONS
 
 
 
-LSAY - Lab 2
+LSAY 4-Class Model - Lab 1
 
 SUMMARY OF ANALYSIS
 
@@ -96,7 +96,7 @@ Random Starts Specifications
 Link                                                         LOGIT
 
 Input data file(s)
-  lsay.dat
+  C:/Users/dinan/Desktop/in-person-day1/lab1/mplus/lsay.dat
 Input data format  FREE
 
 
@@ -511,13 +511,6 @@ Latent Class 3 Compared to Latent Class 4
     Category > 1       0.000      0.000      0.000      0.000
 
 
-RESIDUAL OUTPUT
-
-
-     RESIDUAL OUTPUT IS NOT AVAILABLE FOR THIS MODEL.  ADDITIONAL OUTPUT FOR
-     CATEGORICAL, COUNT, AND NOMINAL VARIABLES MAY BE AVAILABLE USING TECH10.
-
-
 TECHNICAL 11 OUTPUT
 
      Random Starts Specifications for the k-1 Class Analysis Model
@@ -580,14 +573,8 @@ The following plots are available:
   Scatterplots (sample values)
   Sample proportions and estimated probabilities
 
-DIAGRAM INFORMATION
-
-  Mplus diagrams are currently not available for Mixture analysis.
-  No diagram output was produced.
-
-
-     Beginning Time:  23:19:55
-        Ending Time:  23:19:59
+     Beginning Time:  15:31:07
+        Ending Time:  15:31:11
        Elapsed Time:  00:00:04
 
 

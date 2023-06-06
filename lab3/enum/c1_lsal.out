@@ -1,13 +1,13 @@
 Mplus VERSION 8.8
 MUTHEN & MUTHEN
-06/01/2023  11:51 PM
+06/05/2023   4:12 PM
 
 INPUT INSTRUCTIONS
 
   TITLE:
   1-Class
   DATA:
-  FILE = "LSAL_data.dat";
+  FILE = "C:/Users/dinan/Desktop/in-person-day1/lab3/enum/LSAL_data.dat";
 
   VARIABLE:
   NAMES = rand lsayid region urban gender mothed fathed raceth math_irt enjoy good
@@ -92,7 +92,7 @@ Optimization algorithm                                         EMA
 Link                                                         LOGIT
 
 Input data file(s)
-  LSAL_data.dat
+  C:/Users/dinan/Desktop/in-person-day1/lab3/enum/LSAL_data.dat
 Input data format  FREE
 
 
@@ -290,14 +290,8 @@ Latent Class 1
     Category 2         0.702      0.009     78.917      0.000
 
 
-DIAGRAM INFORMATION
-
-  Mplus diagrams are currently not available for Mixture analysis.
-  No diagram output was produced.
-
-
-     Beginning Time:  23:51:59
-        Ending Time:  23:51:59
+     Beginning Time:  16:12:40
+        Ending Time:  16:12:40
        Elapsed Time:  00:00:00
 
 
