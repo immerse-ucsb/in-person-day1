@@ -209,7 +209,6 @@ enum_extract <- LatexSummaryTable(
 
 
 allFit <- enum_extract %>%
-  mutate(aBIC = -2 * LL + Parameters * log((Observations + 2) / 24)) %>%
   mutate(CAIC = -2 * LL + Parameters * (log(Observations) + 1)) %>%
   mutate(AWE = -2 * LL + 2 * Parameters * (log(Observations) + 1.5)) %>%
   mutate(SIC = -.5 * BIC) %>%
@@ -290,13 +289,7 @@ locations = cells_title()
      ),    
     cells_body(
      columns = BF,
-     row =  BF > 10),
-    cells_body(
-     columns =  T11_VLMR_PValue,
-     row =  T11_VLMR_PValue < .001),
-    cells_body(
-     columns =  BLRT_PValue,
-     row =  BLRT_PValue < .001)
+     row =  BF > 10)
   )
 ) 
 
@@ -454,7 +447,7 @@ patterns  <- mplusObject(
   ANALYSIS = 
    "estimator = mlr; 
     type = mixture;    
-    starts = 200 100; 
+    starts = 0; 
     processors = 10;
     optseed = 939021;",
   
@@ -537,7 +530,7 @@ resp_table <- response_patterns %>%
     CPROB1 = html("P<sub><i>k</i></sub>=1"),
     CPROB2 = html("P<sub><i>k</i></sub>=2"),
     CPROB3 = html("P<sub><i>k</i></sub>=3"),
-    CPROB4 = html("P<sub><i>k</i></sub>=4"),    
+    CPROB4 = html("P<sub><i>k</i></sub>=4"),    # Change based on number of clases
     C = md("*k*")) %>% 
   tab_row_group(
     label = "Unconditional response patterns",
@@ -554,6 +547,9 @@ resp_table <- response_patterns %>%
   tab_row_group(
     label = md("*k* = 4 Conditional response patterns"),
     rows = 21:25)  %>% #EDIT THESE VALUES BASED ON THE LAST COLUMN  
+  tab_row_group(
+    label = md("*k* = 5 Conditional response patterns"),
+    rows = 26:30)  %>% #EDIT THESE VALUES BASED ON THE LAST COLUMN   
     row_group_order(
       groups = c("Unconditional response patterns",
                  md("*k* = 1 Conditional response patterns"),
@@ -603,7 +599,7 @@ classification  <- mplusObject(
   ANALYSIS =
     "estimator = ml;
     type = mixture;
-    starts = 200 100; 
+    starts = 0; 
     processors = 10;
     optseed = 939021;
     bootstrap = 1000;",
