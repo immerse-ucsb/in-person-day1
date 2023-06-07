@@ -1,13 +1,13 @@
 Mplus VERSION 8.8
 MUTHEN & MUTHEN
-06/02/2023   6:41 PM
+06/06/2023   3:18 PM
 
 INPUT INSTRUCTIONS
 
   TITLE:
   LCA - Save response patterns
   DATA:
-  FILE = "patterns.dat";
+  FILE = "C:/Users/dinan/Desktop/in-person-day1/lab3/mplus/patterns.dat";
 
   VARIABLE:
   NAMES = rand lsayid region urban gender mothed fathed raceth math_irt enjoy good
@@ -19,7 +19,7 @@ INPUT INSTRUCTIONS
   ANALYSIS:
   estimator = mlr;
       type = mixture;
-      starts = 200 100;
+      starts = 0;
       processors = 10;
       optseed = 939021;
   OUTPUT:
@@ -98,7 +98,7 @@ Random Starts Specifications
 Link                                                         LOGIT
 
 Input data file(s)
-  patterns.dat
+  C:/Users/dinan/Desktop/in-person-day1/lab3/mplus/patterns.dat
 Input data format  FREE
 
 
@@ -1139,8 +1139,8 @@ TECHNICAL 11 OUTPUT
           H0 Loglikelihood Value                        -7124.921
           2 Times the Loglikelihood Difference             59.597
           Difference in the Number of Parameters                6
-          Mean                                              0.063
-          Standard Deviation                                5.866
+          Mean                                              0.064
+          Standard Deviation                                5.865
           P-Value                                          0.0000
 
      LO-MENDELL-RUBIN ADJUSTED LRT TEST
@@ -1171,9 +1171,9 @@ TECHNICAL 14 OUTPUT
           2 Times the Loglikelihood Difference             59.597
           Difference in the Number of Parameters                6
           Approximate P-Value                              0.0000
-          Successful Bootstrap Draws                           10
+          Successful Bootstrap Draws                            5
 
-     WARNING:  OF THE 10 BOOTSTRAP DRAWS, 9 DRAWS HAD BOTH A SMALLER LRT VALUE THAN THE
+     WARNING:  OF THE 5 BOOTSTRAP DRAWS, 4 DRAWS HAD BOTH A SMALLER LRT VALUE THAN THE
      OBSERVED LRT VALUE AND NOT A REPLICATED BEST LOGLIKELIHOOD VALUE FOR THE 4-CLASS MODEL.
      THIS MEANS THAT THE P-VALUE MAY NOT BE TRUSTWORTHY DUE TO LOCAL MAXIMA.
      INCREASE THE NUMBER OF RANDOM STARTS USING THE LRTSTARTS OPTION.
@@ -1227,15 +1227,9 @@ SAVEDATA INFORMATION
     CPROB4
     C
 
-DIAGRAM INFORMATION
-
-  Mplus diagrams are currently not available for Mixture analysis.
-  No diagram output was produced.
-
-
-     Beginning Time:  18:41:41
-        Ending Time:  18:41:46
-       Elapsed Time:  00:00:05
+     Beginning Time:  15:18:18
+        Ending Time:  15:18:21
+       Elapsed Time:  00:00:03
 
 
 

@@ -1,15 +1,14 @@
 ---
-title: "Lab 3: Enumeration"
+title: 'Lab 3: Enumeration'
 author: "IMMERSE Training Team"
-date: "Updated: `r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
     theme: flatly
+  word_document: default
 editor_options:
   markdown:
     wrap: sentence
-header-includes:
-- \usepackage{wrapfig}     
+header-includes: \usepackage{wrapfig}
 ---
 
 ```{r, echo=FALSE}
@@ -266,7 +265,8 @@ locations = cells_title()
   tab_style(
     style = list(
       cell_text(weight = "bold")
-      ),
+
+            ),
     locations = list(cells_body(
      columns = BIC,
      row = BIC == min(BIC[c(1:4)]) # Change this to the number of classes you estimated
@@ -289,7 +289,13 @@ locations = cells_title()
      ),    
     cells_body(
      columns = BF,
-     row =  BF > 10)
+     row =  BF > 10),
+    cells_body( 
+     columns =  T11_VLMR_PValue,
+     row =  ifelse(T11_VLMR_PValue < .001 & lead(T11_VLMR_PValue) > .05, T11_VLMR_PValue < .001, NA)),
+    cells_body(
+     columns =  BLRT_PValue,
+     row =  ifelse(BLRT_PValue < .001 & lead(BLRT_PValue) > .05, BLRT_PValue < .001, NA))
   )
 ) 
 
@@ -305,7 +311,7 @@ Save table:
 gtsave(fit_table, here("lab3","figures","fit_table.png"))
 
 # This may or may not work, its a newer feature:
-gtsave(fit_table, here("lab3", "figures", "fit_table.docx"))
+#gtsave(fit_table, here("lab3", "figures", "fit_table.docx"))
 ```
 
 ------------------------------------------------------------------------
@@ -547,9 +553,6 @@ resp_table <- response_patterns %>%
   tab_row_group(
     label = md("*k* = 4 Conditional response patterns"),
     rows = 21:25)  %>% #EDIT THESE VALUES BASED ON THE LAST COLUMN  
-  tab_row_group(
-    label = md("*k* = 5 Conditional response patterns"),
-    rows = 26:30)  %>% #EDIT THESE VALUES BASED ON THE LAST COLUMN   
     row_group_order(
       groups = c("Unconditional response patterns",
                  md("*k* = 1 Conditional response patterns"),
@@ -576,7 +579,7 @@ Save table:
 gtsave(resp_table, here("lab3","figures","resp_table.png"))
 
 # This may or may not work, its a newer feature:
-gtsave(resp_table, here("lab3", "figures", "resp_table.docx"))
+#gtsave(resp_table, here("lab3", "figures", "resp_table.docx"))
 ```
 
 
@@ -711,7 +714,7 @@ Save table:
 gtsave(class_table, here("lab3","figures","class_table.png"))
 
 # This may or may not work, its a newer feature:
-gtsave(class_table, here("lab3", "figures", "class_table.docx"))
+#gtsave(class_table, here("lab3", "figures", "class_table.docx"))
 ```
 
 
