@@ -693,11 +693,6 @@ class_table <- class_df %>%
       entropy = "Entropy") %>% 
     sub_missing(7,
               missing_text = "") %>%
-    tab_footnote(
-    footnote = html(
-      "<i>Note.</i> <i>f</i><sub>r</sub> = response pattern frequency; P<sub><i>k</i></sub> = posterior class probabilities"
-    )
-  ) %>% 
   cols_align(align = "center") %>% 
   opt_align_table_header(align = "left") %>% 
   gt::tab_options(table.font.names = "Times New Roman")
