@@ -13,7 +13,7 @@ NAMES = rand lsayid region urban gender mothed fathed raceth math_irt enjoy good
 ANALYSIS:
 estimator = ml;
     type = mixture;
-    starts = 200 100; 
+    starts = 0; 
     processors = 10;
     optseed = 939021;
     bootstrap = 1000;
@@ -30,9 +30,9 @@ MODEL:
   Model Constraint:
   New(p1 p2 p3 p4);
   
-  p1 = exp(c1)/(1+exp(c1)+exp(c2)+(c3));
-  p2 = exp(c2)/(1+exp(c1)+exp(c2)+(c3));
-  p3 = exp(c3)/(1+exp(c1)+exp(c2)+(c3));  
-  p4 = 1/(1+exp(c1)+exp(c2)+(c3));
+  p1 = exp(c1)/(1+exp(c1)+exp(c2)+exp(c3));
+  p2 = exp(c2)/(1+exp(c1)+exp(c2)+exp(c3));
+  p3 = exp(c3)/(1+exp(c1)+exp(c2)+exp(c3));  
+  p4 = 1/(1+exp(c1)+exp(c2)+exp(c3));
 OUTPUT:
 cinterval(bcbootstrap)

@@ -1,6 +1,6 @@
 Mplus VERSION 8.8
 MUTHEN & MUTHEN
-06/02/2023   6:43 PM
+07/07/2023   9:10 AM
 
 INPUT INSTRUCTIONS
 
@@ -19,7 +19,7 @@ INPUT INSTRUCTIONS
   ANALYSIS:
   estimator = ml;
       type = mixture;
-      starts = 200 100;
+      starts = 0;
       processors = 10;
       optseed = 939021;
       bootstrap = 1000;
@@ -36,10 +36,10 @@ INPUT INSTRUCTIONS
     Model Constraint:
     New(p1 p2 p3 p4);
 
-    p1 = exp(c1)/(1+exp(c1)+exp(c2)+(c3));
-    p2 = exp(c2)/(1+exp(c1)+exp(c2)+(c3));
-    p3 = exp(c3)/(1+exp(c1)+exp(c2)+(c3));
-    p4 = 1/(1+exp(c1)+exp(c2)+(c3));
+    p1 = exp(c1)/(1+exp(c1)+exp(c2)+exp(c3));
+    p2 = exp(c2)/(1+exp(c1)+exp(c2)+exp(c3));
+    p3 = exp(c3)/(1+exp(c1)+exp(c2)+exp(c3));
+    p4 = 1/(1+exp(c1)+exp(c2)+exp(c3));
   OUTPUT:
   cinterval(bcbootstrap)
 
@@ -381,10 +381,10 @@ Categorical Latent Variables
     C#3                0.769      0.125      6.151      0.000
 
 New/Additional Parameters
-    P1                 0.284      0.027     10.485      0.000
-    P2                 0.153      0.016      9.647      0.000
-    P3                 0.688      0.045     15.169      0.000
-    P4                 0.319      0.031     10.133      0.000
+    P1                 0.197      0.021      9.278      0.000
+    P2                 0.106      0.012      8.724      0.000
+    P3                 0.477      0.024     19.507      0.000
+    P4                 0.221      0.021     10.401      0.000
 
 
 RESULTS IN PROBABILITY SCALE
@@ -577,10 +577,10 @@ Categorical Latent Variables
     C#3              0.434       0.529       0.563       0.769       0.966       1.007       1.078
 
 New/Additional Parameters
-    P1               0.221       0.238       0.243       0.284       0.332       0.343       0.364
-    P2               0.118       0.125       0.130       0.153       0.180       0.187       0.215
-    P3               0.501       0.600       0.625       0.688       0.759       0.773       0.790
-    P4               0.237       0.257       0.268       0.319       0.372       0.382       0.402
+    P1               0.146       0.162       0.166       0.197       0.233       0.244       0.264
+    P2               0.080       0.086       0.089       0.106       0.127       0.132       0.155
+    P3               0.380       0.426       0.441       0.477       0.513       0.518       0.527
+    P4               0.167       0.182       0.188       0.221       0.258       0.263       0.274
 
 
 CONFIDENCE INTERVALS IN PROBABILITY SCALE
@@ -712,8 +712,8 @@ DIAGRAM INFORMATION
   No diagram output was produced.
 
 
-     Beginning Time:  18:43:47
-        Ending Time:  18:44:12
+     Beginning Time:  09:10:11
+        Ending Time:  09:10:36
        Elapsed Time:  00:00:25
 
 
