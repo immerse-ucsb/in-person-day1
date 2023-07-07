@@ -620,10 +620,10 @@ classification  <- mplusObject(
   Model Constraint:
   New(p1 p2 p3 p4);
   
-  p1 = exp(c1)/(1+exp(c1)+exp(c2)+(c3));
-  p2 = exp(c2)/(1+exp(c1)+exp(c2)+(c3));
-  p3 = exp(c3)/(1+exp(c1)+exp(c2)+(c3));  
-  p4 = 1/(1+exp(c1)+exp(c2)+(c3));",
+  p1 = exp(c1)/(1+exp(c1)+exp(c2)+exp(c3));
+  p2 = exp(c2)/(1+exp(c1)+exp(c2)+exp(c3));
+  p3 = exp(c3)/(1+exp(c1)+exp(c2)+exp(c3));  
+  p4 = 1/(1+exp(c1)+exp(c2)+exp(c3));",
 
   
   OUTPUT = "cinterval(bcbootstrap)",
